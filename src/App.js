@@ -1,8 +1,8 @@
 import {useState} from 'react';
-import Navbar from './Components/Navbar/Navbar';
+// import Navbar from './Components/Navbar/Navbar';
 import Auth from './Components/Auth/Auth';
 import './App.css';
-import Search from './Components/Search/Search'
+// import Search from './Components/Search/Search'
 
 
 
@@ -10,7 +10,7 @@ function App() {
   return (
     <div className="App">
       {/* <Navbar /> */}
-      {/* <Auth /> */}
+      <Auth />
       {/* <Search /> */}
     </div>
   );

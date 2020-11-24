@@ -3,4 +3,4 @@ import SearchResults from './SearchResults/SearchResults';
 
 
 
-export default Search;
+// export default Search;
