@@ -12,7 +12,7 @@ const Auth = (props) => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        
+
         const url = login ? 'http://localhost:4001/user/login' : 'http://localhost:4001/user/register';
         const bodyObj = login ? {
             email: email,
@@ -23,6 +23,7 @@ const Auth = (props) => {
             firstName: firstName,
             lastName: lastName
         }
+
         fetch(url, {
             method: 'POST',
             headers: {
@@ -31,7 +32,7 @@ const Auth = (props) => {
             body: JSON.stringify(bodyObj)
         })
         .then(res => res.json())
-        .then(data => login ? props.updateToken(data.token) : undefined)
+        .then(data => login ? props.updateToken(data.token) : props.updateToken(data.token))
     }
 
     const title = () => {
