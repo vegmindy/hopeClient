@@ -7,28 +7,22 @@ const Review = () => {
     const [results, setResults] = useState([])
 
     useEffect(() => {
-        fetch("https://localhost:4000/user/addreview", {
-            method: "Post",
+        fetch("https://localhost:4000/user/getall", {
+            method: "GET",
             headers: {
                 "Content-Type": "application/json",
             }
         })
             .then(res => res.json())
-            .then(data => setResults(data.results))
+            .then(data => setResults(data))
     }, [])
-
-
-    function deletename(){
-        //some function
-    }
-
 
 
     return (
             results.map((result, index) => {
                 return (
                     <div>
-                    <p>{result.name}</p>
+                    <p>{results}</p>
                     <button ></button>
 
                     </div>
