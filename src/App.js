@@ -1,9 +1,8 @@
 import {useState} from 'react';
-// import Navbar from './Components/Navbar/Navbar';
+import Review from "./Components/Review/Review"
 import Auth from './Components/Auth/Auth';
 import Favorites from './Components/Favorites/Favorites'
 import './App.css';
-// import Search from './Components/Search/Search'
 
 
 
@@ -17,7 +16,7 @@ function App() {
   return (
     <div className="App">
       {/* <Navbar /> */}
-      {/* <Search /> */}
+       <Search />
       {viewConductor()}
     </div>
   );
