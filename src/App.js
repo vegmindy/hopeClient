@@ -2,9 +2,9 @@ import {useState} from 'react';
 import Review from "./Components/Review/Review"
 import Auth from './Components/Auth/Auth';
 import './App.css';
+import Search from "./Components/Search/Search"
 import Navbar from './Components/Navbar/Navbar'
 // import Search from "./Components/Search/Search"
-
 
 
 function App() {
@@ -16,6 +16,9 @@ function App() {
 
   return (
     <div className="App">
+      {/* <Navbar /> */}
+       <Search />
+      {/* {viewConductor()} */}
       <Navbar />
        {/* <Search /> */}
       {viewConductor()}
