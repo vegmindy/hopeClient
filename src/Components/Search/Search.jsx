@@ -1,6 +1,9 @@
 import {useState, useEffect, Component} from 'react';
 import {Container, Row, Col, Button, Input, InputGroup, InputGroupAddon, Modal, ModalHeader, ModalFooter, ModalBody} from 'reactstrap';
 import './Search.css';
+import {useState, useEffect} from 'react';
+import SearchResults from './SearchResults/SearchResults';
+
 
 class Search extends Component {
     constructor(props) {
