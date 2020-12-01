@@ -11,6 +11,10 @@ import * as TokenContext from './Contexts/TokenContext';
 
 import {Route, BrowserRouter as Router} from 'react-router-dom'
 
+
+  const viewConductor = () => {
+    return (token === undefined) ? <Auth updateToken={setToken} /> : <Search token={token}/>;
+  }
 function App() {
   const [token, setToken] = useState(localStorage.getItem('sessionToken'));
 
