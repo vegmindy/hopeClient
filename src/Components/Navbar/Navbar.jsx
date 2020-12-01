@@ -45,6 +45,8 @@ import {
   NavbarText
 } from 'reactstrap';
 
+import { Link } from 'react-router-dom'
+
 const Example = (props) => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -58,10 +60,20 @@ const Example = (props) => {
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
             <NavItem>
-              <NavLink href="/">Opiton 1</NavLink>
+              <NavLink><Link to="/">Home</Link></NavLink>
             </NavItem>
+            {
+              () => {
+                if (localStorage.getItem('sessionToken')) {
+                } else {
+                  return <NavItem>
+                    <NavLink><Link to="/login">Login</Link></NavLink>
+                  </NavItem>;
+                }
+              }
+            }
             <NavItem>
-              <NavLink href="/">Option 2</NavLink>
+              <NavLink><Link to="/search">Search</Link></NavLink>
             </NavItem>
             <UncontrolledDropdown nav inNavbar>
               <DropdownToggle nav caret>
