@@ -81,19 +81,6 @@ class Search extends Component {
             }
         })
             .then(res => res.json())
-<<<<<<< HEAD
-            .then(data => console.log(data)//setResults(data.results)
-            )
-    }, [])
-
-    return (
-            results.map((result, index) => {
-                return (
-                    <div>
-                    <p>{result.name}</p>
-                    </div>
-                    )
-=======
             .then(data => {
                 console.log(data.results)
                 this.setState({
@@ -105,7 +92,6 @@ class Search extends Component {
 
     changePage(amount) { //changes the page by a specific amount
         let newPage = this.state.page + amount;
->>>>>>> ae508edd7cf38dff8022a8961a72338803a48045
 
         console.log(newPage)
 

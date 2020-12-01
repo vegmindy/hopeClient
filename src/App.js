@@ -3,12 +3,12 @@ import Review from "./Components/Review/Review"
 import Auth from './Components/Auth/Auth';
 import './App.css';
 import Search from "./Components/Search/Search"
-<<<<<<< HEAD
-=======
 import Navbar from './Components/Navbar/Navbar'
 import Home from './Components/Home'
 import ReviewAdd from './Components/Review/ReviewAdd'
->>>>>>> ae508edd7cf38dff8022a8961a72338803a48045
+import ReviewAll from "./Components/Review/ReviewAll"
+import ReviewUpdate from "./Components/Review/ReviewUpdate"
+import ReviewDelete from "./Components/Review/ReviewDelete"
 
 import * as TokenContext from './Contexts/TokenContext';
 
@@ -19,12 +19,6 @@ function App() {
 
   return (
     <div className="App">
-<<<<<<< HEAD
-      {/* <Navbar /> */}
-      <Review />
-       {/* <Search /> */}
-      {viewConductor()}
-=======
       <TokenContext.Provider value={{ token: token, setToken: setToken }}> {/* All code goes inside here */}
         <Router> {/* All code goes inside here */}
           <Navbar />
@@ -32,9 +26,11 @@ function App() {
           <Route path="/search" component={Search} />
           <Route path="/login" component={Auth} />
           <Route path="/review/add" component={ReviewAdd} />
+          <Route path="/review/update" component={ReviewUpdate}/>
+          <Route path="/review/all" component={ReviewAll}/>
+          <Route path="/review/delete" component={ReviewDelete}/>
         </Router>
       </TokenContext.Provider>
->>>>>>> ae508edd7cf38dff8022a8961a72338803a48045
     </div>
   );
 }
