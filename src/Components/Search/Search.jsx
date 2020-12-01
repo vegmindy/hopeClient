@@ -1,11 +1,6 @@
-<<<<<<< HEAD
-import {useState, useEffect} from 'react';
-import SearchResults from './SearchResults/SearchResults';
-=======
 import {useState, useEffect, Component} from 'react';
 import {Container, Row, Col, Button, Input, InputGroup, InputGroupAddon, Modal, ModalHeader, ModalFooter, ModalBody, Card} from 'reactstrap';
 import './Search.css';
->>>>>>> ae508edd7cf38dff8022a8961a72338803a48045
 
 import Review from '../Review/Review'
 
