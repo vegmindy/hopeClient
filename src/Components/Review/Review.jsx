@@ -41,10 +41,10 @@ export default Review;
 //         method: 'DELETE',
 //         headers: new Headers({
 //             'Content-Type': 'application/json',
-//             'Authorization': props.token
+//             'Authorization': review.token
 //         })
 //     })
-//     .then(() => props.fetchReviews)
+//     .then(() => review.fetchReviews)
 // } 
 
 
@@ -61,3 +61,4 @@ export default Review;
 // const updateOff = () => {
 //     setUpdateActive(false)
 // }
+

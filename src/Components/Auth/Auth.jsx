@@ -69,6 +69,7 @@ const Auth = (props) => {
                 value={lastName}
                 onChange={(event) => setLastName(event.target.value)}
                 />
+                <p>If you don't have an account yet, click the Login/Signup button to create your free account!</p>
             </div>
         ) : null
     }
@@ -99,7 +100,7 @@ const Auth = (props) => {
                 }}
                 />
                 <br/>
-                <button onClick={loginToggle}>Login/Signup Toggle</button>
+                <button onClick={loginToggle}>Login/Signup</button>
                 <br />
                 <button type="submit">Submit User Data</button>
             </form>
