@@ -33,10 +33,6 @@ html, body{
     opacity: 1;
 }
 
-.buttonStyle {
-
-}
-
 /* width */
 ::-webkit-scrollbar {
     width: 10px;
