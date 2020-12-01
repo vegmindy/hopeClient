@@ -1,6 +1,6 @@
-
-import {useState} from 'react';
+import React, {useState} from 'react';
 import './Auth.css';
+import TokenContext from '../../Contexts/TokenContext'
 
 const Auth = (props) => {
     console.log(props);
@@ -11,8 +11,11 @@ const Auth = (props) => {
     const [password, setPassword] = useState('');
     const [login, setLogin] = useState(true);
 
+    let tokenContext = React.useContext(TokenContext)
+
     const handleSubmit = (event) => {
         event.preventDefault();
+
 
         const url = login ? 'http://localhost:4001/user/login' : 'http://localhost:4001/user/register';
         const bodyObj = login ? {
@@ -33,7 +36,10 @@ const Auth = (props) => {
             body: JSON.stringify(bodyObj)
         })
         .then(res => res.json())
-        .then(data => login ? props.updateToken(data.token) : props.updateToken(data.token))
+        .then(data => {
+            tokenContext.setToken(data.token);
+            localStorage.setItem('sessionToken', data.token);
+        })
     }
 
     const title = () => {
