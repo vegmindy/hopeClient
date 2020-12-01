@@ -17,7 +17,7 @@ function App() {
   return (
     <div className="App">
       <TokenContext.Provider value={{ token: token, setToken: setToken }}> {/* All code goes inside here */}
-        <Router> {/* All code goes inside here */}
+        <Router>
           <Navbar />
           <Route path="/" exact component={Home} />
           <Route path="/search" component={Search} />

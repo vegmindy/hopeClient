@@ -1,34 +1,3 @@
-
-// import './Navbar.css';
-
-// // const Navbar = () => {
-// //     return(
-// //         <div>
-// //             <nav id="nav">
-// //                 <h1 className="name">App Name</h1>
-// //                 <button className="login">Login</button>
-// //                 <br/>
-// //                 <button className="signup">Signup</button>
-// //             </nav>
-// //         </div>
-// //     )
-// // }
-
-
-// const Navbar = () => {
-//     return(
-//         <div>
-//             <nav id="nav">
-//                 <button className="profile">My profile</button>
-//             </nav>
-//         </div>
-//     )
-// }
-
-
-// export default Navbar;
-
-
 import React, { useState } from 'react';
 import {
   Collapse,
