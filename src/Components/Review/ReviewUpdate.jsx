@@ -1,16 +1,16 @@
 //update
-const editReview = (review) => {
-    setReviewToUpdate(review);
-    console.log(review);
-}
+// const editReview = (review) => {
+//     setReviewToUpdate(review);
+//     console.log(review);
+// }
 
-const updateOn = () => {
-    setUpdateActive(true);
-}
+// const updateOn = () => {
+//     setUpdateActive(true);
+// }
 
-const updateOff = () => {
-    setUpdateActive(false)
-}
+// const updateOff = () => {
+//     setUpdateActive(false)
+// }
 
 const UpdateReview = () =>{
 
