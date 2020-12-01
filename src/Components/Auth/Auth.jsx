@@ -75,7 +75,6 @@ const Auth = (props) => {
                 value={lastName}
                 onChange={(event) => setLastName(event.target.value)}
                 />
-                <p>If you don't have an account yet, click the Login/Signup button to create your free account!</p>
             </div>
         ) : null
     }
