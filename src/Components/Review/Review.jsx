@@ -1,34 +1,24 @@
 import { useState, useEffect } from "react";
+import {Button, Table} from 'reactstrap'
+import { Link } from 'react-router-dom';
 
-//914eb4182d2c499cb87ff5c6155012a2 api key
-//http example  https://api.rawg.io/api/games?key=YOUR_API_KEY&dates=2019-09-01,2019-09-30&platforms=18,1,7
-const Review = () => {
+const Review = (props) => {
+    const [reviews, setReviews] = useState([]);
 
-    const [results, setResults] = useState([])
-
-    useEffect(() => {
-        fetch("https://localhost:4000/user/getall", {
-            method: "GET",
-            headers: {
-                "Content-Type": "application/json",
-            }
-        })
-            .then(res => res.json())
-            .then(data => setResults(data))
-    }, [])
-
+    const toggleReviewModal = () => {
+        
+    }
 
     return (
-            results.map((result, index) => {
-                return (
-                    <div>
-                    <p>{results}</p>
-                    <button ></button>
-
-                    </div>
-                    )
-
-            })
+            <div className="justify-content-center mx-auto">
+                <Link to={{
+                    pathname: '/review/add',
+                    state: {
+                        gameId: props.gameId,
+                        gameName: props.gameName
+                    }
+                }}>Create Review</Link>
+            </div>
     )
 }
 

@@ -4,24 +4,27 @@ import Auth from './Components/Auth/Auth';
 import './App.css';
 import Search from "./Components/Search/Search"
 import Navbar from './Components/Navbar/Navbar'
-// import Search from "./Components/Search/Search"
+import Home from './Components/Home'
+import ReviewAdd from './Components/Review/ReviewAdd'
 
+import * as TokenContext from './Contexts/TokenContext';
+
+import {Route, BrowserRouter as Router} from 'react-router-dom'
 
 function App() {
-  const [token, setToken] = useState(undefined);
-
-  const viewConductor = () => {
-    return (token === undefined) ? <Auth updateToken={setToken} /> : <Review token={token}/>;
-  }
+  const [token, setToken] = useState(localStorage.getItem('sessionToken'));
 
   return (
     <div className="App">
-      {/* <Navbar /> */}
-       <Search />
-      {/* {viewConductor()} */}
-      <Navbar />
-       {/* <Search /> */}
-      {viewConductor()}
+      <TokenContext.Provider value={{ token: token, setToken: setToken }}> {/* All code goes inside here */}
+        <Router> {/* All code goes inside here */}
+          <Navbar />
+          <Route path="/" exact component={Home} />
+          <Route path="/search" component={Search} />
+          <Route path="/login" component={Auth} />
+          <Route path="/review/add" component={ReviewAdd} />
+        </Router>
+      </TokenContext.Provider>
     </div>
   );
 }
