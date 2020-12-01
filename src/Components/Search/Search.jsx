@@ -1,9 +1,8 @@
 import {useState, useEffect, Component} from 'react';
-import {Container, Row, Col, Button, Input, InputGroup, InputGroupAddon, Modal, ModalHeader, ModalFooter, ModalBody} from 'reactstrap';
+import {Container, Row, Col, Button, Input, InputGroup, InputGroupAddon, Modal, ModalHeader, ModalFooter, ModalBody, Card} from 'reactstrap';
 import './Search.css';
-// import {useState, useEffect} from 'react';
-// import SearchResults from './SearchResults/SearchResults';
 
+import Review from '../Review/Review'
 
 class Search extends Component {
     constructor(props) {
@@ -16,7 +15,8 @@ class Search extends Component {
             gameModal: {
                 show: false,
                 name: "Test Theft Cycle",
-                desc: "Test Theft Cycle is the next installment in non motorized pedestrian vechile theft game genre.  This will really knock your chains off."
+                desc: "Test Theft Cycle is the next installment in non motorized pedestrian vechile theft game genre.  This will really knock your chains off.",
+                gameId: 0
             }
         }
 
@@ -121,13 +121,15 @@ class Search extends Component {
 
                 let gameObj = {
                     name: data.name,
-                    desc: data.description_raw
+                    desc: data.description_raw,
+                    id: data.id
                 }
 
                 let tmpGameModal = this.state.gameModal;
 
                 tmpGameModal.name = gameObj.name;
                 tmpGameModal.desc = gameObj.desc;
+                tmpGameModal.gameId = gameObj.id;
 
                 this.setState({ gameModal: tmpGameModal });
 
@@ -150,60 +152,62 @@ class Search extends Component {
 
     render() {
         return (
-            <div>
-                <div style={{height: '50px'}}>
-                    <div style={{backgroundColor: "white"}} className="fixed-top">
+            <div style={{padding: '10px'}}>
+                <div style={{padding: '5px'}}>
                         <Container>
                             <Row>
                                 <Col>
                                     <InputGroup>
                                         <Input style={{height: "auto"}} type="text" value={this.state.searchValue} onChange={this.handleSearchChange} placeholder="Search..." />
                                         <InputGroupAddon addonType="append">
-                                            <Button onClick={this.handleSearchSubmit} type="button">Submit</Button>
+                                            <Button onClick={this.handleSearchSubmit} type="button" color="dark">Submit</Button>
                                         </InputGroupAddon>
                                     </InputGroup>
                                 </Col>
                             </Row>
                         </Container>
-                    </div>
                 </div>
                 <Container style={{backgroundColor: "white"}}>
-                    {
-                        this.state.resultList.map((item) => {
-                            return <Row>
-                                <Col onClick={() => {this.showGameDetails(item.gameId)}}>
-                                    <div className="gameContainer" style={{
-                                            backgroundImage: (item.backgroundImage !== null)
-                                             ? "url('" + item.backgroundImage +"')" : "linear-gradient(135deg, #231437 0%, #2c385e 50%, #336e6b 100%)"
-                                        }}>
+                    <Card body style={{height: '600px'}}>
+                        <div style={{height: '100%', overflowY: 'scroll', overflowX: 'hidden'}}>
+                        {
+                            this.state.resultList.map((item) => {
+                                return <Row>
+                                    <Col onClick={() => {this.showGameDetails(item.gameId)}}>
+                                        <div className="gameContainer" style={{
+                                                backgroundImage: (item.backgroundImage !== null)
+                                                ? "url('" + item.backgroundImage +"')" : "linear-gradient(135deg, #231437 0%, #2c385e 50%, #336e6b 100%)"
+                                            }}>
 
-                                        <div className="gameTitle">{item.name}</div>
-                                    </div>
-                                </Col>
-                            </Row>
-                        })
-                    }
+                                            <div className="gameTitle">{item.name}</div>
+                                        </div>
+                                    </Col>
+                                </Row>
+                            })
+                        }
+                        </div>
+                    </Card>
                 </Container>
                 <div>
-                    <div style={{height: '50px'}}>
-                        <div className="fixed-bottom">
+                    <div style={{padding: '5px'}}>
                             <Container>
                                 <Row style={{backgroundColor: "white"}}>
                                     <Col>
-                                        <Button className="float-left" onClick={() => {this.changePage(-1)}} color="primary">Previous</Button>
+                                        <Button className="float-left" onClick={() => {this.changePage(-1)}} color="dark">Previous</Button>
                                     </Col>
                                     <Col>
-                                        <Button className="float-right" onClick={() => {this.changePage(1)}} color="primary">Next</Button>
+                                        <Button className="float-right" onClick={() => {this.changePage(1)}} color="dark">Next</Button>
                                     </Col>
                                 </Row>
                             </Container>
-                        </div>
                     </div>
                 </div>
-                <Container><Modal size="lg" isOpen={this.state.gameModal.show} toggle={this.toggleGameDetailsModal} >
-                    <ModalHeader toggle={this.toggleGameDetailsModal}>{this.state.gameModal.name}</ModalHeader>
+                <Container>
+                    <Modal size="lg" isOpen={this.state.gameModal.show} toggle={this.toggleGameDetailsModal} >
+                        <ModalHeader toggle={this.toggleGameDetailsModal}>{this.state.gameModal.name}</ModalHeader>
                         <ModalBody>
                             {this.state.gameModal.desc}
+                            <Review gameId={this.state.gameModal.gameId} gameName={this.state.gameModal.name}/>
                         </ModalBody>
                     </Modal>
                 </Container>
