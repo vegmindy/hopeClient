@@ -13,11 +13,13 @@ const Auth = (props) => {
 
     let tokenContext = React.useContext(TokenContext)
 
+    console.log("auth context", tokenContext)
+
     const handleSubmit = (event) => {
         event.preventDefault();
 
 
-        const url = login ? 'http://localhost:4001/user/login' : 'http://localhost:4001/user/register';
+        const url = login ? 'http://localhost:4000/user/login' : 'http://localhost:4000/user/register';
         const bodyObj = login ? {
             email: email,
             password: password

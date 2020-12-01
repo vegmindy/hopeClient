@@ -16,7 +16,6 @@ import {Route, BrowserRouter as Router} from 'react-router-dom'
 
 function App() {
   const [token, setToken] = useState(localStorage.getItem('sessionToken'));
-
   return (
     <div className="App">
       <TokenContext.Provider value={{ token: token, setToken: setToken }}> {/* All code goes inside here */}
