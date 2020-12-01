@@ -11,7 +11,7 @@ function App() {
   const [token, setToken] = useState(undefined);
 
   const viewConductor = () => {
-    return (token === undefined) ? <Auth updateToken={setToken} /> : <Review token={token}/>;
+    return (token === undefined) ? <Auth updateToken={setToken} /> : <Search token={token}/>;
   }
 
   return (

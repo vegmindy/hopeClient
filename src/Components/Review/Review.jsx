@@ -22,7 +22,7 @@ const Review = () => {
             results.map((result, index) => {
                 return (
                     <div>
-                    <p>{results}</p>
+                    <p>{result}</p>
                     <button ></button>
 
                     </div>
@@ -33,3 +33,31 @@ const Review = () => {
 }
 
 export default Review;
+
+
+// // delete
+// const deleteReview = (review) => {
+//     fetch(`https://localhost:4000/review/${review.id}`, {
+//         method: 'DELETE',
+//         headers: new Headers({
+//             'Content-Type': 'application/json',
+//             'Authorization': props.token
+//         })
+//     })
+//     .then(() => props.fetchReviews)
+// } 
+
+
+// //update
+// const editReview = (review) => {
+//     setReviewToUpdate(review);
+//     console.log(review);
+// }
+
+// const updateOn = () => {
+//     setUpdateActive(true);
+// }
+
+// const updateOff = () => {
+//     setUpdateActive(false)
+// }
