@@ -12,21 +12,6 @@ const ReviewAll = (props) => {
     let token = tokenthing.token
 
     const [userReviews, setUserReviews] = useState([])
-    // let ownerID = props.user.id
-
-    const updateReview = (e) => {
-        return (
-            <div>
-                <Link to={{
-                    pathname: "/review/add",
-                    state: {
-                        reviewID: e
-                    }
-                }} />
-
-            </div>
-        )
-    }
 
     useEffect(() => {
         fetch(`http://localhost:4000/review/byuser`,
