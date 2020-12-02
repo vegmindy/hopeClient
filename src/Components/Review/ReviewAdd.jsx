@@ -18,7 +18,7 @@ const ReviewAdd = (props) => {
         e.preventDefault();
 
         let bodyObj = { //gameId, userReview, userRating
-            gameId: props.location.state.gameId,
+            gameTitle: props.location.state.gameName,
             userReview: reviewText,
             userRating: reviewRating
         }

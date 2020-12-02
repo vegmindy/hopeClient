@@ -20,43 +20,9 @@ const Review = (props) => {
                     }
 
                 }}>Create Review</Link>
-                <Link to={{
-                    pathname: '/updatereview:id'
-                }}>Update Review</Link>
-            </div>
-                }} style={{color: 'white'}}>Create Review</Link>
-            </Button>
+                </Button>
         </div >
     )
 }
 
 export default Review;
-
-
-// // delete
-// const deleteReview = (review) => {
-//     fetch(`https://localhost:4000/review/${review.id}`, {
-//         method: 'DELETE',
-//         headers: new Headers({
-//             'Content-Type': 'application/json',
-//             'Authorization': review.token
-//         })
-//     })
-//     .then(() => review.fetchReviews)
-// } 
-
-
-// //update
-// const editReview = (review) => {
-//     setReviewToUpdate(review);
-//     console.log(review);
-// }
-
-// const updateOn = () => {
-//     setUpdateActive(true);
-// }
-
-// const updateOff = () => {
-//     setUpdateActive(false)
-// }
-
