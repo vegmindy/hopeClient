@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Redirect, Link } from 'react-router-dom';
 import { Form, FormGroup, Input, Label, Container, Button, Modal, ModalHeader, ModalBody } from 'reactstrap';
 import TokenContext from '../../Contexts/TokenContext';
+import APIURL from '../../helpers/environment'
 
 const ReviewAdd = (props) => {
     const [reviewText, setReviewText] = useState('');
@@ -24,7 +25,7 @@ const ReviewAdd = (props) => {
         }
 
 
-        fetch('http://localhost:4001/review/addreview', {
+        fetch(`${APIURL}/review/addreview`, {
             method: 'POST',
             headers: {
                 'Content-Type': "application/json",

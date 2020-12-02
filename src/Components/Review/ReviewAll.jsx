@@ -5,8 +5,7 @@ import TokenContext from "../../Contexts/TokenContext"
 import UpdateLink from "./UpdateLink"
 import DeleteLink from "./DeleteLink"
 import "./ReviewAll.css"
-
-
+import APIURL from '../../helpers/environment'
 
 const ReviewAll = (props) => {
     let tokenthing = React.useContext(TokenContext)
@@ -15,7 +14,7 @@ const ReviewAll = (props) => {
     const [userReviews, setUserReviews] = useState([])
 
     useEffect(() => {
-        fetch("http://localhost:4001/review/byuser",
+        fetch(`${APIURL}/review/byuser`,
             {
                 method: "GET",
                 headers: {

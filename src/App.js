@@ -12,16 +12,16 @@ import ReviewDelete from "./Components/Review/ReviewDelete"
 
 import APIURL from './helpers/environment';
 
-class Application extends Component {
-  state = {
-    review:[]
-  }
-  componentDidMount(){
-    fetch(`${APIURL}/review`)
-    .then(response => response.json())
-    .then(review => this.setState({review}))
-  }
-}
+// class Application extends Component {
+//   state = {
+//     review:[]
+//   }
+//   componentDidMount(){
+//     fetch(`${APIURL}/review`)
+//     .then(response => response.json())
+//     .then(review => this.setState({review}))
+//   }
+// }
 
 import * as TokenContext from './Contexts/TokenContext';
 

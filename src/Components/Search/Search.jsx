@@ -1,6 +1,7 @@
 import {useState, useEffect, Component} from 'react';
 import {Container, Row, Col, Button, Input, InputGroup, InputGroupAddon, Modal, ModalHeader, ModalFooter, ModalBody, Card} from 'reactstrap';
 import './Search.css';
+import APIURL from '../../helpers/environment'
 
 import Review from '../Review/Review'
 
@@ -47,7 +48,7 @@ class Search extends Component {
             searchQuery: this.state.searchValue
         }
 
-        fetch(`http://localhost:4001/search/`, {
+        fetch(`${APIURL}/search/`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -74,7 +75,7 @@ class Search extends Component {
             return;
         }
 
-        fetch(`http://localhost:4001/search/page/${pageNum}`, {
+        fetch(`${APIURL}/search/page/${pageNum}`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -109,7 +110,7 @@ class Search extends Component {
     showGameDetails(id) {
         let tmpGameModal = this.state.gameModal;
 
-        fetch(`http://localhost:4001/search/game/${id}`, {
+        fetch(`${APIURL}/search/game/${id}`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",

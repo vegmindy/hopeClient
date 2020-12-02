@@ -3,6 +3,7 @@ import './Auth.css';
 import TokenContext from '../../Contexts/TokenContext'
 import { Button } from "reactstrap"
 import { Redirect, useLocation, useHistory } from 'react-router-dom';
+import APIURL from '../../helpers/environment'
 
 const Auth = (props) => {
     console.log(props);
@@ -23,7 +24,7 @@ const Auth = (props) => {
         event.preventDefault();
 
 
-        const url = login ? 'http://localhost:4001/user/login' : 'http://localhost:4001/user/register';
+        const url = login ? `${APIURL}/user/login` : `${APIURL}/user/register`;
 
         const bodyObj = login ? {
             email: email,
