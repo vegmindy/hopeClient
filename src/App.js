@@ -17,10 +17,6 @@ import {Route, BrowserRouter as Router} from 'react-router-dom'
 function App() {
   const [token, setToken] = useState(localStorage.getItem('sessionToken'));
 
-  // const viewConductor = () => {
-  //   return token === undefined ? <Auth /> : <Review />
-  // }
-
   return (
     <div className="App">
       <TokenContext.Provider value={{ token: token, setToken: setToken }}> {/* All code goes inside here */}
@@ -36,7 +32,6 @@ function App() {
           <Route path="/review/delete" component={ReviewDelete}/>
         </Router>
       </TokenContext.Provider>
-      {/* {viewConductor()} */}
     </div>
   );
 }

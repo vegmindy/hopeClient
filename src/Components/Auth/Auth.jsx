@@ -23,7 +23,7 @@ const Auth = (props) => {
         event.preventDefault();
 
 
-        const url = login ? 'http://localhost:4000/user/login' : 'http://localhost:4000/user/register';
+        const url = login ? 'http://localhost:4001/user/login' : 'http://localhost:4001/user/register';
 
         const bodyObj = login ? {
             email: email,
@@ -134,22 +134,22 @@ const Auth = (props) => {
                 <button type="submit">Submit User Data</button>
                 <br/>
                 <br/>
-                <button onClick={loginToggle}>Login/Signup</button>
                 <br />
                 <Button className="authButton" onClick={loginToggle}>Login/Signup</Button>
                 {/* <button onClick={loginToggle}>Login/Signup</button> */}
                 <br />
-<!--                 <Button className="authButton" type="submit">Submit User Data</Button>
-                {/* <button type="submit">Submit User Data</button> */}
+                 {/* <Button className="authButton" type="submit">Submit User Data</Button>
+                <button type="submit">Submit User Data</button>
                 <br />
                 <br />
                 <button onClick={loginToggle}>Login/Signup</button>
                 <br />
                 <br />
-                <button type="submit">Submit User Data</button> -->
+                <button type="submit">Submit User Data</button> */}
             </form>
             <div className="clearFix"></div>
 
+        </div>
         </div>
     );
 };
