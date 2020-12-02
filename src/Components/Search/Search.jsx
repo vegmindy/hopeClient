@@ -47,7 +47,7 @@ class Search extends Component {
             searchQuery: this.state.searchValue
         }
 
-        fetch(`http://localhost:4000/search/`, {
+        fetch(`http://localhost:4001/search/`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -74,7 +74,7 @@ class Search extends Component {
             return;
         }
 
-        fetch(`http://localhost:4000/search/page/${pageNum}`, {
+        fetch(`http://localhost:4001/search/page/${pageNum}`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -109,7 +109,7 @@ class Search extends Component {
     showGameDetails(id) {
         let tmpGameModal = this.state.gameModal;
 
-        fetch(`http://localhost:4000/search/game/${id}`, {
+        fetch(`http://localhost:4001/search/game/${id}`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
