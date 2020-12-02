@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import './Auth.css';
 import TokenContext from '../../Contexts/TokenContext'
+import {Button} from "reactstrap"
 import { Redirect, useLocation, useHistory } from 'react-router-dom';
 
 const Auth = (props) => {
@@ -95,6 +96,8 @@ const Auth = (props) => {
     }
 
     return (
+        <div className="wrap">
+            <div className="clearFix"></div>
         <div>
             {
                 handleLogout()
@@ -122,6 +125,13 @@ const Auth = (props) => {
                     setPassword(event.target.value)
                 }}
                 />
+
+                <br/>
+                <Button className="authButton" onClick={loginToggle}>Login/Signup</Button>
+                {/* <button onClick={loginToggle}>Login/Signup</button> */}
+                <br />
+                <Button className="authButton" type="submit">Submit User Data</Button>
+                {/* <button type="submit">Submit User Data</button> */}
                 <br />
                 <br />
                 <button onClick={loginToggle}>Login/Signup</button>
@@ -129,6 +139,8 @@ const Auth = (props) => {
                 <br />
                 <button type="submit">Submit User Data</button>
             </form>
+            <div className="clearFix"></div>
+
         </div>
     );
 };
