@@ -1,30 +1,3 @@
-#nav {
-    display: flex;
-    justify-content: flex-end;
-}
-
-.name {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content:flex-end;
-}
-
-.login {
-    border: 2px solid black;
-}
-
-.signup {
-    border: 2px solid black;
-}
-
-#nav1 {
-    display: flex;
-    justify-content: flex-end;
-    margin-right: 3em;
-}
-
-.profile {
-    width: 7em;
-    height: 7em;
-    border-radius: 50%;
+.myNav{
+    border: 100px solid black;
 }

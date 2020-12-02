@@ -38,6 +38,20 @@ const ReviewEdit = (props) => {
         </Modal>
     )
 }
+//update
+// const editReview = (review) => {
+//     setReviewToUpdate(review);
+//     console.log(review);
+// }
+
+// const updateOn = () => {
+//     setUpdateActive(true);
+// }
+
+// const updateOff = () => {
+//     setUpdateActive(false)
+// }
+
 
 export default ReviewEdit;
 

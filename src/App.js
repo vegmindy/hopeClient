@@ -24,11 +24,12 @@ function App() {
   return (
     <div className="App">
       <TokenContext.Provider value={{ token: token, setToken: setToken }}> {/* All code goes inside here */}
-        <Router> {/* All code goes inside here */}
+        <Router>
           <Navbar />
-          <Route path="/" exact component={Home} />
+          <Route path="/" exact component={Search} />
           <Route path="/search" component={Search} />
           <Route path="/login" component={Auth} />
+          <Route path="/logout" component={Auth} />
           <Route path="/review/add" component={ReviewAdd} />
           <Route path="/review/update" component={ReviewUpdate}/>
           <Route path="/review/all" component={ReviewAll}/>
