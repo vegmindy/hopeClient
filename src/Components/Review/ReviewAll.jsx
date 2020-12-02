@@ -4,6 +4,7 @@ import { Container, Row, Col, Button, Table, } from 'reactstrap';
 import TokenContext from "../../Contexts/TokenContext"
 import UpdateLink from "./UpdateLink"
 import DeleteLink from "./DeleteLink"
+import "./ReviewAll.css"
 
 
 
@@ -28,7 +29,8 @@ const ReviewAll = (props) => {
     }, [])
 
     return (
-        <Container>
+        <Container className="container">
+            <h1>My Reviews!</h1>
             <Table dark hover>
 
                 <thead>

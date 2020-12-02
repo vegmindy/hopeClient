@@ -54,13 +54,14 @@ const Example = (props) => {
 
   return (
     <div>
-      <Navbar color="light" light expand="md">
-        <NavbarBrand href="/">App Name</NavbarBrand>
+      {/* <Navbar color="light" light expand="md"> */}
+      <Navbar style={{border:"2px solid black"}}className="navbar-dark bg-dark" light expand="md">
+        <NavbarBrand href="/">Team Hope</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
             <NavItem>
-              <NavLink><Link to="/">Home</Link></NavLink>
+            <NavLink><Link to="/login">Login</Link></NavLink>
             </NavItem>
             {
               () => {
@@ -72,10 +73,11 @@ const Example = (props) => {
                 }
               }
             }
+            <NavItem style={{padding: ".5rem"}}><Link to="/review/all">My Reviews</Link></NavItem>
             <NavItem>
               <NavLink><Link to="/search">Search</Link></NavLink>
             </NavItem>
-            <UncontrolledDropdown nav inNavbar>
+            {/* <UncontrolledDropdown nav inNavbar>
               <DropdownToggle nav caret>
                 My Profile
               </DropdownToggle>
@@ -91,9 +93,9 @@ const Example = (props) => {
                   Logout
                 </DropdownItem>
               </DropdownMenu>
-            </UncontrolledDropdown>
+            </UncontrolledDropdown> */}
           </Nav>
-          <NavbarText>Additional Text Here</NavbarText>
+          {/* <NavbarText>Additional Text Here</NavbarText> */}
         </Collapse>
       </Navbar>
     </div>

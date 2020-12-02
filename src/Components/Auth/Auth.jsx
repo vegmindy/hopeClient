@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import './Auth.css';
 import TokenContext from '../../Contexts/TokenContext'
+import {Button} from "reactstrap"
 
 const Auth = (props) => {
     console.log(props);
@@ -82,7 +83,8 @@ const Auth = (props) => {
     }
 
     return (
-        <div>
+        <div className="wrap">
+            <div className="clearFix"></div>
             <form onSubmit={handleSubmit}>
                 <h1>{title()}</h1>
                 {signupFields()}
@@ -107,10 +109,14 @@ const Auth = (props) => {
                 }}
                 />
                 <br/>
-                <button onClick={loginToggle}>Login/Signup</button>
+                <Button className="authButton" onClick={loginToggle}>Login/Signup</Button>
+                {/* <button onClick={loginToggle}>Login/Signup</button> */}
                 <br />
-                <button type="submit">Submit User Data</button>
+                <Button className="authButton" type="submit">Submit User Data</Button>
+                {/* <button type="submit">Submit User Data</button> */}
             </form>
+            <div className="clearFix"></div>
+
         </div>
     );
 };
