@@ -2,9 +2,9 @@ import React, {useState} from 'react';
 import {Button, Form, FormGroup, Label, Input, Modal, ModalHeader, ModalBody} from 'reactstrap';
 
 const ReviewEdit = (props) => {
-    props.location.state.
-    const [editRating, setEditRating] = useState(props.reviewToUpdate.rating);
-    const [editReview, setEditReview] = useState(props.reviewToUpdate.review);
+    // props.location.state.
+    const [editRating, setEditRating] = useState(0);
+    const [editReview, setEditReview] = useState("");
 
     const reviewUpdate = (event, review) => {
         event.preventDefault();
