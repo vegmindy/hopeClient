@@ -167,7 +167,7 @@ class Search extends Component {
                             </Row>
                         </Container>
                 </div>
-                <Container style={{backgroundColor: "white"}}>
+                <Container style={{backgroundColor: "dark"}}>
                     <Card body style={{height: '600px'}}>
                         <div style={{height: '100%', overflowY: 'scroll', overflowX: 'hidden'}}>
                         {
@@ -191,7 +191,7 @@ class Search extends Component {
                 <div>
                     <div style={{padding: '5px'}}>
                             <Container>
-                                <Row style={{backgroundColor: "white"}}>
+                                <Row style={{backgroundColor: "dark"}}>
                                     <Col>
                                         <Button className="float-left" onClick={() => {this.changePage(-1)}} color="dark">Previous</Button>
                                     </Col>
