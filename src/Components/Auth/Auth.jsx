@@ -1,6 +1,7 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import './Auth.css';
 import TokenContext from '../../Contexts/TokenContext'
+import { Button } from "reactstrap"
 import { Redirect, useLocation, useHistory } from 'react-router-dom';
 
 const Auth = (props) => {
@@ -23,15 +24,16 @@ const Auth = (props) => {
 
 
         const url = login ? 'http://localhost:4000/user/login' : 'http://localhost:4000/user/register';
+
         const bodyObj = login ? {
             email: email,
             password: password
         } : {
-            email: email,
-            password: password,
-            firstName: firstName,
-            lastName: lastName
-        }
+                email: email,
+                password: password,
+                firstName: firstName,
+                lastName: lastName
+            }
 
         fetch(url, {
             method: 'POST',
@@ -40,13 +42,13 @@ const Auth = (props) => {
             },
             body: JSON.stringify(bodyObj)
         })
-        .then(res => res.json())
-        .then(data => {
-            tokenContext.setToken(data.token);
-            localStorage.setItem('sessionToken', data.token);
+            .then(res => res.json())
+            .then(data => {
+                tokenContext.setToken(data.token);
+                localStorage.setItem('sessionToken', data.token);
 
-            history.push('/search')
-        })
+                history.push('/search')
+            })
     }
 
     const handleLogout = () => {
@@ -73,62 +75,67 @@ const Auth = (props) => {
     const signupFields = () => {
         return !login ? (
             <div>
+                <p>If you already have an account click the Login/Signup button to go the Login page!</p>
                 <label htmlFor="firstName">First Name</label>
-                <br/>
-                <input 
-                type="text"
-                id="firstName"
-                value={firstName}
-                onChange={(event) => setFirstName(event.target.value)}
+                <br />
+                <input
+                    type="text"
+                    id="firstName"
+                    value={firstName}
+                    onChange={(event) => setFirstName(event.target.value)}
                 />
-                <br/>
+                <br />
                 <label htmlFor="lastName">Last Name</label>
-                <br/>
-                <input 
-                type="text"
-                id="lastName"
-                value={lastName}
-                onChange={(event) => setLastName(event.target.value)}
+                <br />
+                <input
+                    type="text"
+                    id="lastName"
+                    value={lastName}
+                    onChange={(event) => setLastName(event.target.value)}
                 />
             </div>
         ) : null
     }
 
     return (
-        <div>
-            {
-                handleLogout()
-            }
-            <form onSubmit={handleSubmit}>
-                <h1>{title()}</h1>
-                {signupFields()}
-                <label htmlFor="email">Email:</label>
-                <br/>
-                <input type="text" id="email"
-                value={email} placeholder="email@email.com" onChange={(event) => {
-                    console.log(event)
-                    setEmail(event.target.value);
-                }} />
-                <br/>
-                <label htmlFor="password">Password:</label>
-                <br/>
-                <input
-                type="password"
-                id="password"
-                value={password}
-                placeholder="password"
-                onChange={(event) => {
-                    console.log(event.target.value)
-                    setPassword(event.target.value)
-                }}
-                />
-                <br />
-                <br />
-                <button onClick={loginToggle}>Login/Signup</button>
-                <br />
-                <br />
-                <button type="submit">Submit User Data</button>
-            </form>
+        <div className="wrap">
+            <div className="clearFix"></div>
+            <div>
+                {
+                    handleLogout()
+                }
+                <form onSubmit={handleSubmit}>
+                    <h1>{title()}</h1>
+                    {signupFields()}
+                    <label htmlFor="email">Email:</label>
+                    <br />
+                    <input type="text" id="email"
+                        value={email} placeholder="email@email.com" onChange={(event) => {
+                            console.log(event)
+                            setEmail(event.target.value);
+                        }} />
+                    <br />
+                    <label htmlFor="password">Password:</label>
+                    <br />
+                    <input
+                        type="password"
+                        id="password"
+                        value={password}
+                        placeholder="password"
+                        onChange={(event) => {
+                            // console.log(event.target.value)
+                            setPassword(event.target.value)
+                        }}
+                    />
+
+                    <br />
+
+                    <Button className="authButton" onClick={loginToggle}>Login/Signup</Button>
+                    <br />
+                    <Button className="authButton" type="submit">Submit User Data</Button>
+                </form>
+                <div className="clearFix"></div>
+            </div>
         </div>
     );
 };
