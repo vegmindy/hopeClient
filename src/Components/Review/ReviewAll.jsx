@@ -15,7 +15,7 @@ const ReviewAll = (props) => {
     const [userReviews, setUserReviews] = useState([])
 
     useEffect(() => {
-        fetch(`http://localhost:4000/review/byuser`,
+        fetch("http://localhost:4000/review/byuser",
             {
                 method: "GET",
                 headers: {
@@ -25,8 +25,10 @@ const ReviewAll = (props) => {
             })
             .then(res => res.json())
             .then(data => setUserReviews(data))
-        //.then(data => console.log(data))
+        // .then(data => console.log(data))
     }, [])
+
+    console.log(userReviews)
 
     return (
         <Container className="container">
