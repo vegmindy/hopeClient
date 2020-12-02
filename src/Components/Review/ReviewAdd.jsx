@@ -70,7 +70,11 @@ const ReviewAdd = (props) => {
                 <ModalHeader>Success!</ModalHeader>
                 <ModalBody>
                     <p>You successfully submitted a review!</p>
-                    <Button color="dark"><Link to="/search" style={{color: 'white'}}>Return to Search</Link></Button>
+                    <Link to="/search" style={{color: 'white'}}>
+                        <Button color="dark">                    
+                            Return to Search
+                        </Button>   
+                    </Link>
                 </ModalBody>
             </Modal>
         </div>
