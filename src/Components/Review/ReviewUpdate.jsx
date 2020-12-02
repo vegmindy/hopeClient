@@ -2,6 +2,8 @@ import React, {useState} from 'react';
 import {Button, Form, FormGroup, Label, Input, Modal, ModalHeader, ModalBody} from 'reactstrap';
 
 const ReviewEdit = (props) => {
+
+    props.location.state.
     const [editRating, setEditRating] = useState(props.reviewToUpdate.rating);
     const [editReview, setEditReview] = useState(props.reviewToUpdate.review);
 
