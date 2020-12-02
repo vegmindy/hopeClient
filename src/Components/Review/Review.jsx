@@ -18,6 +18,9 @@ const Review = (props) => {
                         gameName: props.gameName
                     }
                 }}>Create Review</Link>
+                <Link to={{
+                    pathname: '/updatereview:id'
+                }}>Update Review</Link>
             </div>
     )
 }

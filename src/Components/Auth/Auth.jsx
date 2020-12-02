@@ -17,7 +17,7 @@ const Auth = (props) => {
         event.preventDefault();
 
 
-        const url = login ? 'http://localhost:4001/user/login' : 'http://localhost:4001/user/register';
+        const url = login ? 'http://localhost:3000/user/login' : 'http://localhost:3000/user/register';
         const bodyObj = login ? {
             email: email,
             password: password
@@ -58,6 +58,7 @@ const Auth = (props) => {
     const signupFields = () => {
         return !login ? (
             <div>
+                <p>If you already have an account click the Login/Signup button to go the Login page!</p>
                 <label htmlFor="firstName">First Name</label>
                 <br/>
                 <input 
@@ -100,14 +101,17 @@ const Auth = (props) => {
                 value={password}
                 placeholder="password"
                 onChange={(event) => {
-                    console.log(event.target.value)
+                    // console.log(event.target.value)
                     setPassword(event.target.value)
                 }}
                 />
                 <br/>
+                <br/>
+                <button type="submit">Submit User Data</button>
+                <br/>
+                <br/>
                 <button onClick={loginToggle}>Login/Signup</button>
                 <br />
-                <button type="submit">Submit User Data</button>
             </form>
         </div>
     );
