@@ -12,7 +12,7 @@ const ReviewEdit = (props) => {
 
     const reviewUpdate = (event, review) => {
         event.preventDefault();
-        fetch(`${APIURL}/log${props.reviewToUpdate.id}`,{
+        fetch(`${APIURL}/review/update${props.reviewToUpdate.id}`,{
             method: 'PUT',
             body: JSON.stringify({log: {rating: editRating, review: editReview}}),
             headers: new Headers({
