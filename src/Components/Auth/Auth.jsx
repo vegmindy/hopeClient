@@ -24,6 +24,7 @@ const Auth = (props) => {
 
 
         const url = login ? 'http://localhost:4000/user/login' : 'http://localhost:4000/user/register';
+
         const bodyObj = login ? {
             email: email,
             password: password
@@ -74,6 +75,7 @@ const Auth = (props) => {
     const signupFields = () => {
         return !login ? (
             <div>
+                <p>If you already have an account click the Login/Signup button to go the Login page!</p>
                 <label htmlFor="firstName">First Name</label>
                 <br/>
                 <input 
@@ -121,23 +123,30 @@ const Auth = (props) => {
                 value={password}
                 placeholder="password"
                 onChange={(event) => {
-                    console.log(event.target.value)
+                    // console.log(event.target.value)
                     setPassword(event.target.value)
                 }}
                 />
 
                 <br/>
+
+                <br/>
+                <button type="submit">Submit User Data</button>
+                <br/>
+                <br/>
+                <button onClick={loginToggle}>Login/Signup</button>
+                <br />
                 <Button className="authButton" onClick={loginToggle}>Login/Signup</Button>
                 {/* <button onClick={loginToggle}>Login/Signup</button> */}
                 <br />
-                <Button className="authButton" type="submit">Submit User Data</Button>
+<!--                 <Button className="authButton" type="submit">Submit User Data</Button>
                 {/* <button type="submit">Submit User Data</button> */}
                 <br />
                 <br />
                 <button onClick={loginToggle}>Login/Signup</button>
                 <br />
                 <br />
-                <button type="submit">Submit User Data</button>
+                <button type="submit">Submit User Data</button> -->
             </form>
             <div className="clearFix"></div>
 

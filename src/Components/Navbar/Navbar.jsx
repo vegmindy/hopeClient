@@ -30,7 +30,9 @@ const Example = (props) => {
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
             <NavItem>
+              
             <NavLink><Link to="/login">Login</Link></NavLink>
+
             </NavItem>
             {
               () => {
