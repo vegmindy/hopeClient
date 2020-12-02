@@ -18,16 +18,10 @@ const Review = (props) => {
                         gameId: props.gameId,
                         gameName: props.gameName
                     }
-<<<<<<< HEAD
-
-                }}>Create Review</Link>
+                    }}>Create Review</Link>
                 </Button>
         </div >
-=======
-                }} style={{color: 'white'}}>Create Review</Link>
-            </Button>
-        </div>
->>>>>>> 446ed4faf59e3839a4147b365799ecfa4b71bb86
+
     )
 }
 

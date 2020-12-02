@@ -15,7 +15,7 @@ const ReviewAll = (props) => {
     const [userReviews, setUserReviews] = useState([])
 
     useEffect(() => {
-        fetch("http://localhost:4000/review/byuser",
+        fetch("http://localhost:4001/review/byuser",
             {
                 method: "GET",
                 headers: {
@@ -57,8 +57,8 @@ const ReviewAll = (props) => {
                                     <td>{review.gameTitle}</td>
                                     <td>{review.userRating}</td>
                                     <td>{review.userReview}</td>
-                                    <td><UpdateLink reviewID = {review.id}/></td>
-                                    <td><DeleteLink reviewID = {review.id}/></td>
+                                    <td><UpdateLink reviewID = {review.id} userRating = {review.userRating} gameTitle = {review.gameTitle} userReview = {review.userReview}/></td>
+                                    <td><DeleteLink reviewID = {review.id}  userRating = {review.userRating} gameTitle = {review.gameTitle} userReview = {review.userReview}/></td>
                                 </tr>
                             )
                         })
