@@ -1,34 +1,3 @@
-
-// import './Navbar.css';
-
-// // const Navbar = () => {
-// //     return(
-// //         <div>
-// //             <nav id="nav">
-// //                 <h1 className="name">App Name</h1>
-// //                 <button className="login">Login</button>
-// //                 <br/>
-// //                 <button className="signup">Signup</button>
-// //             </nav>
-// //         </div>
-// //     )
-// // }
-
-
-// const Navbar = () => {
-//     return(
-//         <div>
-//             <nav id="nav">
-//                 <button className="profile">My profile</button>
-//             </nav>
-//         </div>
-//     )
-// }
-
-
-// export default Navbar;
-
-
 import React, { useState } from 'react';
 import {
   Collapse,
@@ -55,23 +24,16 @@ const Example = (props) => {
   return (
     <div>
       <Navbar color="light" light expand="md">
-        <NavbarBrand href="/">App Name</NavbarBrand>
+        <NavbarBrand href="/">HOPE</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
-            <NavItem>
+            {/* <NavItem>
               <NavLink><Link to="/">Home</Link></NavLink>
+            </NavItem> */}
+            <NavItem>
+              <NavLink><Link to="/login">Login</Link></NavLink>
             </NavItem>
-            {
-              () => {
-                if (localStorage.getItem('sessionToken')) {
-                } else {
-                  return <NavItem>
-                    <NavLink><Link to="/login">Login</Link></NavLink>
-                  </NavItem>;
-                }
-              }
-            }
             <NavItem>
               <NavLink><Link to="/search">Search</Link></NavLink>
             </NavItem>
@@ -88,12 +50,13 @@ const Example = (props) => {
                 </DropdownItem>
                 <DropdownItem divider />
                 <DropdownItem>
-                  Logout
+            <NavItem>
+              <NavLink><Link to="/logout">Logout</Link></NavLink>
+            </NavItem>
                 </DropdownItem>
               </DropdownMenu>
             </UncontrolledDropdown>
           </Nav>
-          <NavbarText>Additional Text Here</NavbarText>
         </Collapse>
       </Navbar>
     </div>
