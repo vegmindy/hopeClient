@@ -3,7 +3,6 @@ import {Button, Form, FormGroup, Label, Input, Modal, ModalHeader, ModalBody} fr
 
 const ReviewEdit = (props) => {
 
-    console.log(props)
     const [editRating, setEditRating] = useState(0);
     const [editReview, setEditReview] = useState("");
 
