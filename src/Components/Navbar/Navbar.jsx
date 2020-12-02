@@ -24,23 +24,16 @@ const Example = (props) => {
   return (
     <div>
       <Navbar color="light" light expand="md">
-        <NavbarBrand href="/">App Name</NavbarBrand>
+        <NavbarBrand href="/">HOPE</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
-            <NavItem>
+            {/* <NavItem>
               <NavLink><Link to="/">Home</Link></NavLink>
+            </NavItem> */}
+            <NavItem>
+              <NavLink><Link to="/login">Login</Link></NavLink>
             </NavItem>
-            {
-              () => {
-                if (localStorage.getItem('sessionToken')) {
-                } else {
-                  return <NavItem>
-                    <NavLink><Link to="/login">Login</Link></NavLink>
-                  </NavItem>;
-                }
-              }
-            }
             <NavItem>
               <NavLink><Link to="/search">Search</Link></NavLink>
             </NavItem>
@@ -57,12 +50,13 @@ const Example = (props) => {
                 </DropdownItem>
                 <DropdownItem divider />
                 <DropdownItem>
-                  Logout
+            <NavItem>
+              <NavLink><Link to="/logout">Logout</Link></NavLink>
+            </NavItem>
                 </DropdownItem>
               </DropdownMenu>
             </UncontrolledDropdown>
           </Nav>
-          <NavbarText>Additional Text Here</NavbarText>
         </Collapse>
       </Navbar>
     </div>
