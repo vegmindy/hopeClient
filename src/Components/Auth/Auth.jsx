@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import './Auth.css';
 import TokenContext from '../../Contexts/TokenContext'
 import {Button} from "reactstrap"
+import { Redirect, useLocation, useHistory } from 'react-router-dom';
 
 const Auth = (props) => {
     console.log(props);
@@ -13,6 +14,8 @@ const Auth = (props) => {
     const [login, setLogin] = useState(true);
 
     let tokenContext = React.useContext(TokenContext)
+    let location = useLocation()
+    let history = useHistory();
 
     console.log("auth context", tokenContext)
 
@@ -42,7 +45,17 @@ const Auth = (props) => {
         .then(data => {
             tokenContext.setToken(data.token);
             localStorage.setItem('sessionToken', data.token);
+
+            history.push('/search')
         })
+    }
+
+    const handleLogout = () => {
+        console.log('location', location)
+        if (location.pathname === '/logout') {
+            tokenContext.setToken('');
+            localStorage.setItem('sessionToken', '');
+        }
     }
 
     const title = () => {
@@ -85,6 +98,10 @@ const Auth = (props) => {
     return (
         <div className="wrap">
             <div className="clearFix"></div>
+        <div>
+            {
+                handleLogout()
+            }
             <form onSubmit={handleSubmit}>
                 <h1>{title()}</h1>
                 {signupFields()}
@@ -108,12 +125,19 @@ const Auth = (props) => {
                     setPassword(event.target.value)
                 }}
                 />
+
                 <br/>
                 <Button className="authButton" onClick={loginToggle}>Login/Signup</Button>
                 {/* <button onClick={loginToggle}>Login/Signup</button> */}
                 <br />
                 <Button className="authButton" type="submit">Submit User Data</Button>
                 {/* <button type="submit">Submit User Data</button> */}
+                <br />
+                <br />
+                <button onClick={loginToggle}>Login/Signup</button>
+                <br />
+                <br />
+                <button type="submit">Submit User Data</button>
             </form>
             <div className="clearFix"></div>
 

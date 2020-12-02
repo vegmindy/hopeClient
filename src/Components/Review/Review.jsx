@@ -1,24 +1,26 @@
 import { useState, useEffect } from "react";
-import {Button, Table} from 'reactstrap'
+import { Button, Table } from 'reactstrap'
 import { Link } from 'react-router-dom';
 
 const Review = (props) => {
     const [reviews, setReviews] = useState([]);
 
     const toggleReviewModal = () => {
-        
+
     }
 
     return (
-            <div className="justify-content-center mx-auto">
+        <div style={{padding: '10px'}} className="justify-content-center mx-auto">
+            <Button color="dark" className="justify-content-center mx-auto">
                 <Link to={{
                     pathname: '/review/add',
                     state: {
                         gameId: props.gameId,
                         gameName: props.gameName
                     }
-                }}>Create Review</Link>
-            </div>
+                }} style={{color: 'white'}}>Create Review</Link>
+            </Button>
+        </div >
     )
 }
 

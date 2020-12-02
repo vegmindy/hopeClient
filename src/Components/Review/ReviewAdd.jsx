@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { Redirect } from 'react-router-dom';
-import { Form, FormGroup, Input, Label, Container, Button } from 'reactstrap';
+import { Redirect, Link } from 'react-router-dom';
+import { Form, FormGroup, Input, Label, Container, Button, Modal, ModalHeader, ModalBody } from 'reactstrap';
 import TokenContext from '../../Contexts/TokenContext';
 
 const ReviewAdd = (props) => {
     const [reviewText, setReviewText] = useState('');
     const [reviewRating, setReviewRating] = useState(1);
+    const [submitSuccess, setSubmitSuccess] = useState(false)
 
     let tokenContext = React.useContext(TokenContext);
 
@@ -23,7 +24,7 @@ const ReviewAdd = (props) => {
         }
 
 
-        fetch('http://localhost:4001/review/addreview', {
+        fetch('http://localhost:4000/review/addreview', {
             method: 'POST',
             headers: {
                 'Content-Type': "application/json",
@@ -32,7 +33,7 @@ const ReviewAdd = (props) => {
             body: JSON.stringify(bodyObj)
         })
             .then(res => res.json())
-            .then(data => console.log(data))
+            .then(data => setSubmitSuccess(true))
 
         console.log(reviewText, reviewRating);
         console.log('Hi you added a review')
@@ -65,6 +66,13 @@ const ReviewAdd = (props) => {
                     <Button type="submit" color="dark">Submit</Button>
                 </Form>
             </Container>
+            <Modal isOpen={submitSuccess}>
+                <ModalHeader>Success!</ModalHeader>
+                <ModalBody>
+                    <p>You successfully submitted a review!</p>
+                    <Button color="dark"><Link to="/search" style={{color: 'white'}}>Return to Search</Link></Button>
+                </ModalBody>
+            </Modal>
         </div>
     );
 }
