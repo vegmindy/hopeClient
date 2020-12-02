@@ -33,6 +33,12 @@ const Example = (props) => {
             <NavItem>
               <NavLink><Link to="/search">Search</Link></NavLink>
             </NavItem>
+<<<<<<< HEAD
+=======
+            <NavItem>
+              <NavLink><Link to="/logout">Logout</Link></NavLink>
+            </NavItem>
+>>>>>>> cb2cf3e1f022817c8cdd2bc32e6a126f0b80baaf
           </Nav>
         </Collapse>
       </Navbar>

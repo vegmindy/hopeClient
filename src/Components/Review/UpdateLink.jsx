@@ -8,7 +8,10 @@ const UpdateLink = (props) => {
                 <Link to={{
                     pathname: '/review/update',
                     state: {
-                        review: props.reviewID
+                        reviewID: props.reviewID,
+                        userRating: props.userRating,
+                        gameTitle: props.gameTitle,
+                        userReview: props.userReview
                     }
                 }}><Button>Update</Button></Link>
             </div>

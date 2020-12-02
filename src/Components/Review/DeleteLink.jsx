@@ -8,7 +8,10 @@ const DeleteLink = (props) => {
                 <Link to={{
                     pathname: '/review/delete',
                     state: {
-                        review: props.reviewID
+                        reviewID: props.reviewID,
+                        userRating: props.userRating,
+                        gameTitle: props.gameTitle,
+                        userReview: props.userReview
                     }
                 }}><Button>Delete</Button></Link>
             </div>
