@@ -72,9 +72,7 @@ const ReviewAdd = (props) => {
                 <ModalBody>
                     <p>You successfully submitted a review!</p>
                     <Link to="/search" style={{color: 'white'}}>
-                        <Button color="dark">                    
-                            Return to Search
-                        </Button>   
+                    <Button color="dark"><Link to="/search" style={{color: 'white'}}>Return to Search</Link></Button>  
                     </Link>
                 </ModalBody>
             </Modal>
