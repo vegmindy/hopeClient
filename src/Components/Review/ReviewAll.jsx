@@ -48,19 +48,19 @@ const ReviewAll = (props) => {
                 <tbody>
                     {
 
-                        userReviews.map((review, index) => {
-                            return (
+                        // userReviews.map((review, index) => {
+                        //     return (
 
-                                <tr key={index}>
-                                    <td>{index + 1}</td>
-                                    <td>{review.gameTitle}</td>
-                                    <td>{review.userRating}</td>
-                                    <td>{review.userReview}</td>
-                                    <td><UpdateLink reviewID = {review.id} userRating = {review.userRating} gameTitle = {review.gameTitle} userReview = {review.userReview}/></td>
-                                    <td><DeleteLink reviewID = {review.id}  userRating = {review.userRating} gameTitle = {review.gameTitle} userReview = {review.userReview}/></td>
-                                </tr>
-                            )
-                        })
+                        //         <tr key={index}>
+                        //             <td>{index + 1}</td>
+                        //             <td>{review.gameTitle}</td>
+                        //             <td>{review.userRating}</td>
+                        //             <td>{review.userReview}</td>
+                        //             <td><UpdateLink reviewID = {review.id} userRating = {review.userRating} gameTitle = {review.gameTitle} userReview = {review.userReview}/></td>
+                        //             <td><DeleteLink reviewID = {review.id}  userRating = {review.userRating} gameTitle = {review.gameTitle} userReview = {review.userReview}/></td>
+                        //         </tr>
+                        //     )
+                        // })
                     }
                 </tbody>
             </Table>

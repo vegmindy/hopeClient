@@ -40,7 +40,7 @@ function App() {
           <Route path="/login" component={Auth} />
           <Route path="/logout" component={Auth} />
           <Route path="/review/add" component={ReviewAdd} />
-          <Route path="/review/update" component={ReviewUpdate}/>
+          <Route path="/review/reviewupdate" component={ReviewUpdate}/>
           <Route path="/review/all" component={ReviewAll}/>
           <Route path="/review/delete" component={ReviewDelete}/>
         </Router>

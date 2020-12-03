@@ -99,22 +99,23 @@ const ReviewEdit = (props) => {
         })
     }
     return(
-        <Modal isOpen={true}>
-            <ModalHeader>Edit a Review</ModalHeader>
-            <ModalBody>
-                <Form onSubmit={reviewUpdate}>
-                    <FormGroup>
-                        <Label htmlFor="rating">Edit Rating:</Label>
-                        <Input name="rating" value={editRating} onChange={(e)=> setEditRating(e.target.value)}/>
-                    </FormGroup>
-                    <FormGroup>
-                        <Label htmlFor="review">Edit Review:</Label>
-                        <Input name="review" value={editReview} onChange={(e) => setEditReview(e.target.value)}/>
-                    </FormGroup>
-                    <Button type="submit">Update Review</Button>
-                </Form>
-            </ModalBody>
-        </Modal>
+        <h1>Hello</h1>
+        // <Modal isOpen={true}>
+        //     <ModalHeader>Edit a Review</ModalHeader>
+        //     <ModalBody>
+        //         <Form onSubmit={reviewUpdate}>
+        //             <FormGroup>
+        //                 <Label htmlFor="rating">Edit Rating:</Label>
+        //                 <Input name="rating" value={editRating} onChange={(e)=> setEditRating(e.target.value)}/>
+        //             </FormGroup>
+        //             <FormGroup>
+        //                 <Label htmlFor="review">Edit Review:</Label>
+        //                 <Input name="review" value={editReview} onChange={(e) => setEditReview(e.target.value)}/>
+        //             </FormGroup>
+        //             <Button type="submit">Update Review</Button>
+        //         </Form>
+        //     </ModalBody>
+        // </Modal>
         // <Container>
         //     <h1>Edit Review for {props.location.state.gameName}</h1>
         //     <Form onSubmit={reviewUpdate}>
