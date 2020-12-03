@@ -6,7 +6,7 @@ const UpdateLink = (props) => {
     return (
             <div className="justify-content-center mx-auto">
                 <Link to={{
-                    pathname: '/review/update',
+                    pathname: '/review/reviewupdate',
                     state: {
                         reviewID: props.reviewID,
                         userRating: props.userRating,

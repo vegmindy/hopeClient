@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Redirect, Link } from 'react-router-dom';
 import { Form, FormGroup, Input, Label, Container, Button, Modal, ModalHeader, ModalBody } from 'reactstrap';
 import TokenContext from '../../Contexts/TokenContext';
+import APIURL from '../../helpers/environment'
 
 const ReviewAdd = (props) => {
     const [reviewText, setReviewText] = useState('');
@@ -24,7 +25,7 @@ const ReviewAdd = (props) => {
         }
 
 
-        fetch('http://localhost:4001/review/addreview', {
+        fetch(`${APIURL}/review/addreview`, {
             method: 'POST',
             headers: {
                 'Content-Type': "application/json",
@@ -70,7 +71,9 @@ const ReviewAdd = (props) => {
                 <ModalHeader>Success!</ModalHeader>
                 <ModalBody>
                     <p>You successfully submitted a review!</p>
-                    <Button color="dark"><Link to="/search" style={{color: 'white'}}>Return to Search</Link></Button>
+                    <Link to="/search" style={{color: 'white'}}>
+                    <Button color="dark"><Link to="/search" style={{color: 'white'}}>Return to Search</Link></Button>  
+                    </Link>
                 </ModalBody>
             </Modal>
         </div>
