@@ -86,7 +86,7 @@ const ReviewEdit = (props) => {
 
     const reviewUpdate = (e, review) => {
         e.preventDefault();
-        fetch(`${APIURL}/review/updatereview${props.reviewToUpdate.id}`,{
+        fetch(`${APIURL}/review/updatereview${props.reviewID}`,{
             method: 'PUT',
             body: JSON.stringify({update: {rating: editRating, review: editReview}}),
             headers: new Headers({
