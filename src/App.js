@@ -9,19 +9,9 @@ import ReviewAdd from './Components/Review/ReviewAdd'
 import ReviewAll from "./Components/Review/ReviewAll"
 import ReviewUpdate from "./Components/Review/ReviewUpdate"
 import ReviewDelete from "./Components/Review/ReviewDelete"
+import AllUserReviews from "./Components/Review/AllUsersReviews"
 
 import APIURL from './helpers/environment';
-
-// class Application extends Component {
-//   state = {
-//     review:[]
-//   }
-//   componentDidMount(){
-//     fetch(`${APIURL}/review`)
-//     .then(response => response.json())
-//     .then(review => this.setState({review}))
-//   }
-// }
 
 import * as TokenContext from './Contexts/TokenContext';
 
@@ -43,6 +33,7 @@ function App() {
           <Route path="/review/update" component={ReviewUpdate}/>
           <Route path="/review/all" component={ReviewAll}/>
           <Route path="/review/delete" component={ReviewDelete}/>
+          <Route path="/review/allusers" component={AllUserReviews}/>
         </Router>
       </TokenContext.Provider>
     </div>

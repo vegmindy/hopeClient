@@ -62,6 +62,9 @@ const ReviewAll = (props) => {
                             )
                         })
                     }
+                    <tr>
+
+                    </tr>
                 </tbody>
             </Table>
         </Container>
