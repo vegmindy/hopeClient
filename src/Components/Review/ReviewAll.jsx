@@ -27,6 +27,18 @@ const ReviewAll = (props) => {
         // .then(data => console.log(data))
     }, [])
 
+    // function deleteUserReview(id){
+    //     // console.log(props.location.state.reviewID)
+    // fetch(`${APIURL}/review/delete/${id}`, {
+    //     method: 'DELETE',
+    //     headers:{
+    //         'Content-Type': 'application/json',
+    //         'Authorization': props.token
+    //     }
+    // })
+    // .then((res) => res.json)
+    // }
+
     console.log(userReviews)
 
     return (
@@ -58,6 +70,7 @@ const ReviewAll = (props) => {
                                     <td>{review.userReview}</td>
                                     <td><UpdateLink reviewID = {review.id} userRating = {review.userRating} gameTitle = {review.gameTitle} userReview = {review.userReview}/></td>
                                     <td><DeleteLink reviewID = {review.id}  userRating = {review.userRating} gameTitle = {review.gameTitle} userReview = {review.userReview}/></td>
+                                    {/* <td><Button onClick={deleteUserReview(review.id)}>Delete</Button></td> */}
                                 </tr>
                             )
                         })

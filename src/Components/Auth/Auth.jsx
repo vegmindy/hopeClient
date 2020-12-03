@@ -137,7 +137,6 @@ const Auth = (props) => {
                 </form>
                 <div className="clearFix"></div>
             </div>
-
         </div>
     );
 };
